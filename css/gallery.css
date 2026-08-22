@@ -1,0 +1,394 @@
+/* =========================
+   GALLERY MEMORIES
+   ========================= */
+
+#gallery {
+    position: relative;
+    /* flex-start agar bagian atas konten selalu terjangkau
+       (bukan center yang bisa memotong bagian atas saat
+       konten lebih tinggi dari layar) */
+    justify-content: flex-start;
+    align-items: center;
+    background:
+        radial-gradient(circle at 30% 20%, rgba(236, 72, 153, .08), transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(236, 72, 153, .05), transparent 40%),
+        #020617;
+    padding: 60px 20px;
+    z-index: 10;
+}
+
+#gallery.page.active {
+    display: flex !important;
+}
+
+
+/* =========================
+   ANTISIPASI KONTEN TERPOTONG
+   page.css memakai margin auto untuk centering,
+   yang bisa membuat bagian atas tak terjangkau
+   saat konten lebih tinggi dari layar.
+   justify-content: flex-start + margin 0 memastikan
+   bagian atas selalu tampil dan konten bisa digulir.
+   ========================= */
+
+#gallery .gallery-container {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   CONTAINER
+   ========================= */
+
+.gallery-container {
+    position: relative;
+    width: min(1200px, 95%);
+    text-align: center;
+    z-index: 2;
+}
+
+.gallery-label {
+    color: #ec4899;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.gallery-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 64px);
+    line-height: 1.2;
+    margin-bottom: 50px;
+}
+
+.gallery-title span {
+    color: #ec4899;
+}
+
+
+/* =========================
+   SHOWCASE
+   ========================= */
+
+.gallery-showcase {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto 30px;
+}
+
+.gallery-counter {
+    position: absolute;
+    top: -35px;
+    right: 0;
+    font-size: 13px;
+    color: #64748b;
+    letter-spacing: 4px;
+    font-weight: 300;
+    z-index: 3;
+}
+
+.gallery-counter span {
+    font-size: 26px;
+    color: #ec4899;
+    font-weight: 600;
+}
+
+.gallery-photo-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: 900px;
+
+    margin: auto;
+
+    border-radius: 24px;
+    overflow: hidden;
+
+    background: rgba(255,255,255,.03);
+}
+
+.gallery-photo-wrapper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(2, 6, 23, .6) 0%,
+        transparent 35%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gallery-photo{
+    display:block;
+
+    max-width:100%;
+    max-height:80vh;
+
+    width:auto;
+    height:auto;
+
+    object-fit:contain;
+}
+
+
+/* =========================
+   INFO
+   ========================= */
+
+.gallery-info {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.gallery-date {
+    color: #ec4899;
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.gallery-caption {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 2.8vw, 34px);
+    color: #f1f5f9;
+    line-height: 1.4;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+   NAVIGATION
+   ========================= */
+
+.gallery-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    margin-top: 35px;
+}
+
+.gallery-arrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .05);
+    border: 1px solid rgba(255, 255, 255, .1);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .35s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.gallery-arrow:hover {
+    background: #ec4899;
+    border-color: #ec4899;
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(236, 72, 153, .3);
+}
+
+.gallery-arrow:active {
+    transform: scale(.95);
+}
+
+.gallery-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.gallery-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .18);
+    border: none;
+    cursor: pointer;
+    transition: all .4s ease;
+    padding: 0;
+}
+
+.gallery-dot:hover {
+    background: rgba(255, 255, 255, .35);
+}
+
+.gallery-dot.active {
+    background: #ec4899;
+    width: 34px;
+    border-radius: 6px;
+    box-shadow: 0 0 20px rgba(236, 72, 153, .35);
+    cursor: default;
+}
+
+
+/* =========================
+   CONTINUE BUTTON
+   ========================= */
+
+#continueToNext {
+    margin-top: 50px;
+    padding: 18px 45px;
+    border: none;
+    border-radius: 999px;
+    background: #ec4899;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .35s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    letter-spacing: .5px;
+}
+
+#continueToNext:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(236, 72, 153, .35);
+}
+
+#continueToNext:active {
+    transform: translateY(-1px);
+}
+
+#continueToNext span {
+    transition: transform .35s ease;
+    display: inline-block;
+}
+
+#continueToNext:hover span {
+    transform: translateX(8px);
+}
+
+
+/* =========================
+   DECORATIVE
+   ========================= */
+
+.gallery-glow {
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    border-radius: 50%;
+    background: rgba(236, 72, 153, .07);
+    filter: blur(130px);
+    pointer-events: none;
+}
+
+.gallery-glow--1 {
+    top: -20%;
+    left: -10%;
+}
+
+.gallery-glow--2 {
+    bottom: -20%;
+    right: -10%;
+}
+
+.gallery-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.gallery-particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: rgba(255, 255, 255, .25);
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(255, 255, 255, .15);
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    #gallery {
+        padding: 70px 16px;
+    }
+
+    .gallery-title {
+        margin-bottom: 40px;
+    }
+
+    .gallery-counter {
+        position: relative;
+        top: 0;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+
+    .gallery-photo-wrapper {
+        height: 340px;
+        border-radius: 18px;
+    }
+
+    .gallery-info {
+        margin-top: 22px;
+    }
+
+    .gallery-arrow {
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+    }
+
+    .gallery-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    .gallery-dot.active {
+        width: 26px;
+        border-radius: 5px;
+    }
+
+    #continueToNext {
+        margin-top: 40px;
+        padding: 16px 36px;
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .gallery-photo-wrapper {
+        height: 260px;
+        border-radius: 16px;
+    }
+
+    .gallery-nav {
+        gap: 20px;
+    }
+
+    .gallery-arrow {
+        width: 38px;
+        height: 38px;
+        font-size: 14px;
+    }
+
+    .gallery-caption {
+        font-size: 20px;
+    }
+
+}

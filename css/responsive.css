@@ -1,0 +1,303 @@
+@media (max-width: 768px) {
+
+    #first-chapter {
+        padding: 100px 25px;
+    }
+
+
+    .chapter-heading {
+        margin-bottom: 70px;
+    }
+
+
+    .chapter-memory {
+        grid-template-columns: 1fr;
+
+        gap: 70px;
+    }
+
+
+    .memory-photo-wrapper {
+        width: 90%;
+
+        max-width: 450px;
+
+        margin: auto;
+    }
+
+
+    .photo-date {
+        font-size: 55px;
+
+        right: -10px;
+    }
+
+
+    .memory-story {
+        text-align: left;
+    }
+
+
+    .memory-story h3 {
+        font-size: 38px;
+    }
+
+
+    .memory-quote {
+        font-size: 21px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    #love-counter .counter-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+
+        width: 100% !important;
+
+        gap: 40px 10px !important;
+
+        overflow: visible !important;
+    }
+
+    #love-counter .counter-item {
+        width: auto !important;
+        min-width: 0 !important;
+    }
+
+    #love-counter .counter-divider {
+        display: none !important;
+    }
+
+    #love-counter .counter-item span {
+        font-size: 45px !important;
+    }
+
+    #love-counter .counter-item p {
+        font-size: 8px !important;
+
+        letter-spacing: 2px !important;
+
+        margin-top: 12px !important;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    #little-things {
+        padding: 90px 20px;
+    }
+
+
+    .things-heading {
+        margin-bottom: 60px;
+    }
+
+
+    .things-heading h2 {
+        font-size: 48px;
+    }
+
+
+    .things-description {
+        font-size: 14px;
+    }
+
+
+    .things-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 15px;
+    }
+
+
+    .love-card {
+        height: 280px;
+    }
+
+
+    .love-card-front,
+    .love-card-back {
+        padding: 20px;
+    }
+
+
+    .love-card-front span {
+        font-size: 65px;
+    }
+
+
+    .love-card-front p {
+        font-size: 7px;
+
+        letter-spacing: 2px;
+    }
+
+
+    .love-card-back h3 {
+        margin: 15px 0;
+
+        font-size: 23px;
+    }
+
+
+    .love-card-back p {
+        font-size: 11px;
+
+        line-height: 1.7;
+    }
+
+
+    .card-heart {
+        margin-top: 15px;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    /* =========================
+       DREAM TOGETHER
+       ========================= */
+
+    #dream-together {
+        padding: 80px 20px;
+    }
+
+    .dream-container h2 {
+        font-size: clamp(38px, 7vw, 48px);
+    }
+
+    .dream-description {
+        margin: 30px auto;
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .dream-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 45px;
+    }
+
+    .dream-card {
+        padding: 30px 25px;
+    }
+
+    .dream-icon {
+        font-size: 46px;
+        margin-bottom: 18px;
+    }
+
+    #continueGallery {
+        margin-top: 45px;
+        padding: 16px 38px;
+        font-size: 15px;
+    }
+
+    /* =========================
+       MEMORY JOURNEY
+       ========================= */
+
+    #memory-journey {
+        padding: 90px 20px;
+    }
+
+
+    .journey-heading {
+        margin-bottom: 60px;
+    }
+
+
+    .journey-heading h2 {
+        font-size: 48px;
+    }
+
+
+    .journey-content {
+        grid-template-columns: 1fr;
+
+        gap: 60px;
+    }
+
+
+    .journey-photo-wrapper {
+        height: 500px;
+    }
+
+
+    .journey-story h3 {
+        font-size: 45px;
+    }
+
+
+    .journey-text {
+        font-size: 14px;
+
+        line-height: 1.9;
+    }
+
+
+    .journey-navigation {
+        margin-top: 35px;
+    }
+
+
+    #continueJourney {
+        margin-top: 70px;
+    }
+
+}
+
+/* =========================
+   DREAM TOGETHER — layar sangat kecil
+   ========================= */
+
+@media (max-width: 480px) {
+
+    #dream-together {
+        padding: 70px 16px;
+    }
+
+    .dream-container h2 {
+        font-size: 34px;
+    }
+
+    .dream-label {
+        letter-spacing: 6px;
+        font-size: 12px;
+    }
+
+    .dream-description {
+        font-size: 13px;
+    }
+
+    .dream-grid {
+        gap: 16px;
+        margin-top: 40px;
+    }
+
+    .dream-card {
+        padding: 26px 20px;
+        border-radius: 20px;
+    }
+
+    .dream-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+    }
+
+    .dream-card p {
+        font-size: 14px;
+    }
+
+    #continueGallery {
+        margin-top: 40px;
+        padding: 15px 32px;
+        font-size: 14px;
+    }
+
+}

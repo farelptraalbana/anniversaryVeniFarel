@@ -1,0 +1,268 @@
+#letter{
+
+padding:80px 20px;
+
+background:#020617;
+
+}
+
+#letter.page.active{
+    display:flex;
+}
+
+.letter-container{
+
+width:100%;
+
+max-width:900px;
+
+text-align:center;
+
+position:relative;
+
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope{
+
+width:320px;
+
+height:220px;
+
+margin:auto;
+
+background:linear-gradient(
+135deg,
+#ec4899,
+#be185d
+);
+
+border-radius:15px;
+
+cursor:pointer;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+box-shadow:0 30px 80px rgba(0,0,0,.4);
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.envelope::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+background:linear-gradient(
+135deg,
+transparent 40%,
+rgba(255,255,255,.15) 50%,
+transparent 60%
+);
+
+pointer-events:none;
+
+z-index:3;
+
+}
+
+.envelope-front{
+
+position:relative;
+
+z-index:1;
+
+}
+
+.envelope-front h3{
+
+font-size:32px;
+
+margin-bottom:15px;
+
+font-family:'Playfair Display';
+
+}
+
+.envelope-front p{
+
+opacity:.8;
+
+}
+
+
+/* =========================
+   LETTER PAPER
+========================= */
+
+.letter-paper{
+
+margin:60px auto 0;
+
+padding:70px;
+
+border-radius:20px;
+
+background:white;
+
+color:#222;
+
+text-align:left;
+
+line-height:2;
+
+box-shadow:0 30px 90px rgba(0,0,0,.4);
+
+display:none;
+
+opacity:0;
+
+transform-origin:top center;
+
+}
+
+.letter-paper.revealed{
+
+display:block;
+
+}
+
+.letter-paper h2{
+
+margin-bottom:40px;
+
+font-family:'Playfair Display';
+
+font-size:42px;
+
+}
+
+.letter-paper p{
+
+margin-bottom:30px;
+
+transform-origin:left center;
+
+}
+
+.signature{
+
+margin-top:60px;
+
+font-size:22px;
+
+}
+
+
+/* =========================
+   DECORATIVE HEARTS
+========================= */
+
+.letter-hearts{
+
+position:fixed;
+
+inset:0;
+
+pointer-events:none;
+
+z-index:0;
+
+overflow:hidden;
+
+}
+
+.heart-particle{
+
+position:absolute;
+
+font-size:20px;
+
+opacity:0;
+
+color:#ec4899;
+
+will-change:transform,opacity;
+
+}
+
+.letter-ending{
+
+    margin-top:70px;
+
+    text-align:center;
+
+}
+
+.letter-ending p{
+
+    color:#94a3b8;
+
+    font-size:18px;
+
+    margin-bottom:30px;
+
+    line-height:1.8;
+
+    font-style:italic;
+
+}
+
+#continueFuture{
+
+    padding:16px 38px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#ec4899;
+
+    color:white;
+
+    font-family:"Poppins",sans-serif;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+#continueFuture:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 15px 35px rgba(236,72,153,.35);
+
+}
+
+#continueFuture span{
+
+    margin-left:10px;
+
+    transition:.3s;
+
+}
+
+#continueFuture:hover span{
+
+    margin-left:18px;
+
+}

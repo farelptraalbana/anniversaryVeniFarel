@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Anniversary ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/page.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/story.css">
+    <link rel="stylesheet" href="css/chapter.css">
+    <link rel="stylesheet" href="css/counter.css">
+    <link rel="stylesheet" href="css/things.css">
+    <link rel="stylesheet" href="css/journey.css">
+    <link rel="stylesheet" href="css/letter.css">
+    <link rel="stylesheet" href="css/dream.css">
+    <link rel="stylesheet" href="css/future.css">
+    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="css/anniversary.css">
+    <link rel="stylesheet" href="css/lastthing.css">
+    <link rel="stylesheet" href="css/video.css">
+    <link rel="stylesheet" href="css/secret-ending.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/lock.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         BACKGROUND MUSIC
+         Autoplay & loop otomatis dari awal saat lagu selesai
+         ========================= -->
+    <audio id="bgMusic" src="assets/music/namun_percayalah.mp3" loop preload="auto"></audio>
+
+    <!-- =========================
+         LOCK SCREEN
+         ========================= -->
+    <div id="lockScreen">
+
+        <div class="lock-hearts"></div>
+
+        <div class="lock-card">
+
+            <div class="lock-icon-wrapper">
+                <svg class="lock-icon" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                    <rect class="lock-body lock-closed" x="7" y="14" width="18" height="14" rx="3" />
+                    <path class="lock-closed" d="M11 14V10a5 5 0 0 1 10 0v4" />
+                    <circle class="lock-closed" cx="16" cy="21" r="2" fill="#ec4899" />
+                    <line class="lock-closed" x1="16" y1="21" x2="16" y2="24" stroke="#ec4899" />
+                    <path class="lock-open" d="M5 16h22v12H5z" />
+                    <path class="lock-open" d="M16 21v4" />
+                    <circle class="lock-open" cx="16" cy="21" r="2" fill="#22c55e" />
+                    <path class="lock-open" d="M11 10c0-2.8 2.2-5 5-5s5 2.2 5 5v4H11v-4z" />
+                </svg>
+            </div>
+
+            <h1 class="lock-title">
+                Happy Anniversary <span>❤️</span>
+            </h1>
+
+            <p class="lock-subtitle">
+                Jawab dulu, baru buka ceritanya
+            </p>
+
+            <div class="lock-steps">
+                <span class="lock-step"></span>
+                <span class="lock-step"></span>
+            </div>
+
+            <p class="lock-question" id="lockQuestion"></p>
+
+            <div id="lockFormWrap">
+                <div class="lock-input-group">
+                    <input
+                        type="text"
+                        class="lock-input"
+                        id="lockInput"
+                        autocomplete="off"
+                        spellcheck="false"
+                        maxlength="10">
+                </div>
+
+                <button class="lock-btn" id="lockSubmit">
+                    Buka ❤️
+                </button>
+            </div>
+
+            <div class="lock-success" id="lockSuccess">
+                <div class="lock-success-icon">✅</div>
+                <p class="lock-success-text">Selamat! Kamu berhasil membuka cerita ini ❤️</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- =========================
+         ERROR POPUP OVERLAY
+         ========================= -->
+    <div class="lock-popup-overlay" id="lockPopup">
+        <div class="lock-popup">
+            <div class="lock-popup-icon">💔</div>
+            <h3 class="lock-popup-title" id="popupTitle">
+                ❌ <span>Kurang Tepat</span>
+            </h3>
+            <p class="lock-popup-text" id="popupText">
+                Tanggal yang kamu masukkan belum tepat.
+            </p>
+            <button class="lock-popup-btn" id="popupBtn">
+                Coba Lagi
+            </button>
+        </div>
+    </div>
+
+    <div id="pageTransition">
+
+        <div class="transition-content">
+
+            <h2 id="transitionTitle"></h2>
+
+            <p id="transitionSubtitle"></p>
+
+        </div>
+
+    </div>
+
+    <div id="app">
+
+        <div class="hero-transition"></div>
+
+        <!-- Hero -->
+        <section id="hero" class="page active">
+
+            <div id="stars"></div>
+            <div class="hero-aurora"></div>
+
+            <div class="hero-card">
+
+                <p class="hero-subtitle">
+                    Every love story begins somewhere...
+                </p>
+
+                <div class="hero-photo-wrapper">
+                    <img
+                        src="assets/photos/couple.jpeg"
+                        class="hero-photo"
+                        alt="Foto Kami">
+                </div>
+
+                <h1 class="hero-title">
+                    Farel <span>♥</span> Veni
+                </h1>
+
+                <p class="hero-anniversary">
+                    Happy Anniversary
+                </p>
+
+                <button id="startBtn">
+                    Mulai Perjalanan
+                </button>
+
+            </div>
+
+        </section>
+
+        <section id="story-intro" class="page">
+
+            <div class="story-background-glow"></div>
+
+            <div class="story-content">
+
+                <p class="story-label">
+                    Our Story
+                </p>
+
+                <div class="story-slides">
+
+                    <div class="story-slide active">
+                        <p>Hari itu...</p>
+                    </div>
+
+                    <div class="story-slide">
+                        <p>aku belum tahu...</p>
+                    </div>
+
+                    <div class="story-slide">
+                        <p>kalau seseorang akan datang...</p>
+                    </div>
+
+                    <div class="story-slide story-highlight">
+                        <p>dan mengubah banyak hal.</p>
+                    </div>
+
+                </div>
+
+                <div class="story-navigation">
+
+                    <button id="storyNext">
+                        Selanjutnya
+                        <span>→</span>
+                    </button>
+
+                </div>
+
+                <div class="story-progress">
+                    <span class="story-dot active"></span>
+                    <span class="story-dot"></span>
+                    <span class="story-dot"></span>
+                    <span class="story-dot"></span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="first-chapter" class="page">
+
+            <div class="chapter-glow"></div>
+
+            <div class="chapter-container">
+
+                <div class="chapter-heading">
+
+                    <p class="chapter-number">
+                        Chapter 01
+                    </p>
+
+                    <h2>
+                        The First Chapter
+                    </h2>
+
+                    <p class="chapter-subtitle">
+                        where our story slowly began.
+                    </p>
+
+                </div>
+
+
+                <div class="chapter-memory">
+
+                    <div class="memory-photo-wrapper">
+
+                        <span class="photo-date">
+                            2024
+                        </span>
+
+                        <img
+                            src="assets/photos/first-memory.jpg"
+                            alt="Kenangan Pertama"
+                            class="memory-photo">
+
+                        <p class="photo-caption">
+                            the beginning of something beautiful.
+                        </p>
+
+                    </div>
+
+
+                    <div class="memory-story">
+
+                        <p class="story-small">
+                            Aku masih ingat...
+                        </p>
+
+                        <h3>
+                            Hari ketika semuanya mulai terasa berbeda.
+                        </h3>
+
+                        <p class="memory-text">
+                            Mungkin saat itu aku belum tahu sejauh apa
+                            perjalanan ini akan membawa kita.
+                        </p>
+
+                        <p class="memory-text">
+                            Tapi dari sekian banyak hal yang terjadi,
+                            ada satu hal yang perlahan mulai aku sadari...
+                        </p>
+
+                        <p class="memory-quote">
+                            “Aku mulai menyukai keberadaanmu
+                            di dalam hari-hariku.”
+                        </p>
+
+                        <button id="openCounter">
+                            How long has it been?
+                            <span>→</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="love-counter" class="page">
+
+            <div class="counter-glow"></div>
+
+            <div class="counter-container">
+
+                <p class="counter-label">
+                    Our Time Together
+                </p>
+
+                <h2>
+                    We've been together for
+                </h2>
+
+                <div class="counter-grid">
+
+                    <div class="counter-item">
+                        <span id="years">00</span>
+                        <p>Years</p>
+                    </div>
+
+                    <div class="counter-item">
+                        <span id="months">00</span>
+                        <p>Months</p>
+                    </div>
+
+                    <div class="counter-item">
+                        <span id="days">00</span>
+                        <p>Days</p>
+                    </div>
+
+                    <div class="counter-item">
+                        <span id="hours">00</span>
+                        <p>Hours</p>
+                    </div>
+
+                    <div class="counter-item">
+                        <span id="minutes">00</span>
+                        <p>Minutes</p>
+                    </div>
+
+                    <div class="counter-item">
+                        <span id="seconds">00</span>
+                        <p>Seconds</p>
+                    </div>
+
+                </div>
+
+                <p class="counter-since">
+                    since August 24, 2024 · 08:24
+                </p>
+
+                <p class="counter-ending">
+                    and still counting...
+                    <span>♥</span>
+                </p>
+
+                <button id="continueCounter">
+                    Continue Our Story
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+        <section id="little-things" class="page">
+
+            <div class="things-glow"></div>
+
+            <div class="things-container">
+
+                <div class="things-heading">
+
+                    <p class="things-label">
+                        Little Things
+                    </p>
+
+                    <h2>
+                        Things I love<br>
+                        about <span>you.</span>
+                    </h2>
+
+                    <p class="things-description">
+                        Ada banyak hal kecil tentangmu
+                        yang mungkin tidak pernah aku katakan.
+                    </p>
+
+                </div>
+
+                <div class="things-grid">
+
+                    <div class="love-card">
+                        <div class="love-card-inner">
+
+                            <div class="love-card-front">
+                                <span>01</span>
+                                <p>Tap to discover</p>
+                            </div>
+
+                            <div class="love-card-back">
+                                <span>01</span>
+
+                                <h3>Your Smile</h3>
+
+                                <p>
+                                    Aku suka senyummu.
+                                    Entah kenapa, melihatmu tersenyum
+                                    selalu berhasil membuat hariku
+                                    terasa sedikit lebih baik.
+                                </p>
+
+                                <div class="card-heart">♥</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="love-card">
+                        <div class="love-card-inner">
+
+                            <div class="love-card-front">
+                                <span>02</span>
+                                <p>Tap to discover</p>
+                            </div>
+
+                            <div class="love-card-back">
+                                <span>02</span>
+
+                                <h3>Your Voice</h3>
+
+                                <p>
+                                    Aku suka mendengar ceritamu.
+                                    Bahkan cerita sederhana tentang
+                                    harimu terasa menyenangkan
+                                    ketika itu datang darimu.
+                                </p>
+
+                                <div class="card-heart">♥</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="love-card">
+                        <div class="love-card-inner">
+
+                            <div class="love-card-front">
+                                <span>03</span>
+                                <p>Tap to discover</p>
+                            </div>
+
+                            <div class="love-card-back">
+                                <span>03</span>
+
+                                <h3>Your Laugh</h3>
+
+                                <p>
+                                    Tawamu adalah salah satu suara
+                                    favoritku. Terutama ketika kamu
+                                    tertawa karena hal-hal kecil
+                                    yang sebenarnya tidak lucu.
+                                </p>
+
+                                <div class="card-heart">♥</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="love-card">
+                        <div class="love-card-inner">
+
+                            <div class="love-card-front">
+                                <span>04</span>
+                                <p>Tap to discover</p>
+                            </div>
+
+                            <div class="love-card-back">
+                                <span>04</span>
+
+                                <h3>Your Expression</h3>
+
+                                <p>
+                                    Aku suka semua ekspresimu.
+                                    Saat senang, bingung,
+                                    bahkan saat kamu mulai kesal
+                                    kepadaku.
+                                </p>
+
+                                <div class="card-heart">♥</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="love-card">
+                        <div class="love-card-inner">
+
+                            <div class="love-card-front">
+                                <span>05</span>
+                                <p>Tap to discover</p>
+                            </div>
+
+                            <div class="love-card-back">
+                                <span>05</span>
+
+                                <h3>Your Presence</h3>
+
+                                <p>
+                                    Kadang kamu tidak perlu
+                                    melakukan apa-apa.
+                                    Cukup ada di dekatku,
+                                    dan itu sudah berarti banyak.
+                                </p>
+
+                                <div class="card-heart">♥</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                    <div class="love-card">
+                        <div class="love-card-inner">
+
+                            <div class="love-card-front">
+                                <span>06</span>
+                                <p>Tap to discover</p>
+                            </div>
+
+                            <div class="love-card-back">
+                                <span>06</span>
+
+                                <h3>Just You</h3>
+
+                                <p>
+                                    Dan mungkin yang paling sederhana...
+                                    aku menyukai caramu menjadi dirimu
+                                    sendiri.
+                                </p>
+
+                                <div class="card-heart">♥</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <p class="things-hint">
+                    tap each card to discover
+                    <span>♥</span>
+                </p>
+
+                <button id="continueThings">
+                    There's More
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+        <section id="memory-journey" class="page">
+
+            <div class="journey-glow"></div>
+
+            <div class="journey-container">
+
+                <div class="journey-heading">
+
+                    <p class="journey-label">
+                        Places · Moments · Us
+                    </p>
+
+                    <h2>
+                        Some moments<br>
+                        deserve to <span>stay 2024.</span>
+                    </h2>
+
+                </div>
+
+                <div class="journey-content">
+
+                    <div class="journey-photo-area">
+
+                        <div class="journey-counter">
+                            <span id="currentMemory">01</span>
+                            <span>/</span>
+                            <span id="totalMemory">05</span>
+                        </div>
+
+                        <div class="journey-photo-wrapper">
+
+                            <img
+                                id="journeyPhoto"
+                                src="assets/photos/memories/memory-1.jpg"
+                                alt="Our Memory">
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="journey-story">
+
+                        <p id="journeyDate" class="journey-date">
+                            2024
+                        </p>
+
+                        <h3 id="journeyTitle">
+                            The beginning.
+                        </h3>
+
+                        <p id="journeyText" class="journey-text">
+                            Hari itu mungkin terlihat seperti hari biasa.
+                            Tapi tanpa aku sadari, hari itu menjadi awal
+                            dari banyak cerita yang akan kita buat bersama.
+                        </p>
+
+                        <div class="journey-navigation">
+
+                            <button id="previousMemory" aria-label="Previous memory">
+                                ←
+                            </button>
+
+                            <button id="nextMemory" aria-label="Next memory">
+                                →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <button id="continueJourney">
+                    One More Thing
+                    <span>→</span>
+                </button>
+
+            </div>
+
+        </section>
+
+        <section id="letter" class="page">
+
+            <div class="letter-container">
+
+                <div class="envelope" id="envelope">
+
+                    <div class="envelope-front">
+
+                        <h3>For Veni ❤️</h3>
+
+                        <p>Click to Open</p>
+
+                    </div>
+
+                </div>
+
+                <div class="letter-paper" id="letterPaper">
+
+                    <h2>Dear Veni,</h2>
+
+                    <p>
+                        Kalau kamu sedang membaca surat ini,
+                        berarti kita sudah melewati begitu banyak hari bersama.
+                    </p>
+
+                    <p>
+                        Aku masih ingat bagaimana semuanya dimulai.
+                        Dari obrolan sederhana, tawa kecil,
+                        sampai akhirnya kamu menjadi seseorang
+                        yang selalu ingin aku temui setiap hari.
+                    </p>
+
+                    <p>
+                        Terima kasih sudah menjadi tempat
+                        aku pulang ketika lelah.
+                        Terima kasih sudah bertahan
+                        melewati hari-hari yang tidak selalu mudah.
+                    </p>
+
+                    <p>
+                        Aku tahu kita bukan pasangan yang sempurna.
+                        Kita pernah salah paham,
+                        pernah diam,
+                        pernah kecewa.
+                        Tapi setiap kali itu terjadi,
+                        aku selalu memilih untuk tetap bersamamu.
+                    </p>
+
+                    <p>
+                        Karena bagiku,
+                        hubungan bukan tentang siapa yang paling benar,
+                        tetapi tentang siapa yang tetap memilih bertahan.
+                    </p>
+
+                    <p>
+                        Aku tidak tahu masa depan akan seperti apa.
+                        Tapi kalau aku boleh memilih,
+                        aku ingin semua cerita berikutnya
+                        tetap ada kamu di dalamnya.
+                    </p>
+
+                    <p>
+                        Happy Anniversary, Sayang ❤️
+                    </p>
+
+                    <div class="signature">
+
+                        Love,
+
+                        <br><br>
+
+                        <strong>Farel</strong>
+
+                    </div>
+
+                    <div class="letter-ending">
+
+                        <p>
+                            But...
+                            this isn't the end of our story.
+                        </p>
+
+                        <button id="continueFuture">
+
+                            Keep Reading
+
+                            <span>→</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="our-future" class="page">
+
+            <div class="future-glow"></div>
+
+            <div class="future-container">
+
+                <p class="future-label">
+                    Our Future
+                </p>
+
+                <h2 class="future-title">
+                    I don't know<br>
+                    what tomorrow looks like...
+                </h2>
+
+                <p class="future-description">
+                    Tapi ada satu hal yang selalu aku yakini.
+                    Aku ingin semua cerita berikutnya
+                    tetap ada kamu di dalamnya.
+                </p>
+
+                <div class="future-moon">
+
+                    <div class="moon"></div>
+
+                </div>
+
+                <button id="continueToDream">
+
+                    Let's Dream
+
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <section id="dream-together" class="page">
+
+            <div class="dream-glow"></div>
+
+            <div class="dream-container">
+
+                <p class="dream-label">
+                    Dream Together
+                </p>
+
+                <h2>
+                    There are still<br>
+                    so many places<br>
+                    waiting for us.
+                </h2>
+
+                <p class="dream-description">
+
+                    Aku tidak tahu nanti hidup akan membawa kita ke mana.
+
+                    Tapi aku ingin setiap tujuan itu,
+                    kita capai bersama.
+
+                </p>
+
+                <div class="dream-grid">
+
+                    <div class="dream-card">
+
+                        <div class="dream-icon">✈️</div>
+
+                        <h3>Travel Together</h3>
+
+                        <p>
+                            Mengunjungi tempat-tempat
+                            yang selama ini hanya kita lihat
+                            dari layar handphone.
+                        </p>
+
+                    </div>
+
+                    <div class="dream-card">
+
+                        <div class="dream-icon">🏠</div>
+
+                        <h3>Our Little Home</h3>
+
+                        <p>
+
+                            Rumah kecil,
+                            banyak tanaman,
+                            dan kamu di dalamnya.
+
+                        </p>
+
+                    </div>
+
+                    <div class="dream-card">
+
+                        <div class="dream-icon">🌅</div>
+
+                        <h3>Grow Old Together</h3>
+
+                        <p>
+
+                            Semoga suatu hari nanti
+                            kita bisa melihat matahari terbenam
+                            sambil mengenang semua cerita ini.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <button id="continueGallery">
+
+                    Remember Our Journey
+
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             GALLERY MEMORIES
+             ========================= -->
+        <section id="gallery" class="page">
+
+            <div class="gallery-glow gallery-glow--1"></div>
+            <div class="gallery-glow gallery-glow--2"></div>
+
+            <div class="gallery-particles"></div>
+
+            <div class="gallery-container">
+
+                <p class="gallery-label">
+                    Gallery Memories
+                </p>
+
+                <h2 class="gallery-title">
+                    Every photo<br>
+                    tells a <span>story.</span>
+                </h2>
+
+                <div class="gallery-showcase">
+
+                    <div class="gallery-counter">
+                        <span id="galleryCurrent">01</span>
+                        <span>/</span>
+                        <span id="galleryTotal">06</span>
+                    </div>
+
+                    <div class="gallery-photo-wrapper">
+
+                        <img
+                            id="galleryPhoto"
+                            src="assets/photos/couple.jpeg"
+                            alt="Gallery Photo"
+                            class="gallery-photo">
+
+                    </div>
+
+                </div>
+
+                <div class="gallery-info">
+
+                    <p class="gallery-date" id="galleryDate">
+                        2024
+                    </p>
+
+                    <p class="gallery-caption" id="galleryCaption">
+                        Di mana semuanya dimulai.
+                    </p>
+
+                </div>
+
+                <div class="gallery-nav">
+
+                    <button class="gallery-arrow" id="prevGallery" aria-label="Previous photo">
+                        ←
+                    </button>
+
+                    <div class="gallery-dots">
+
+                        <button class="gallery-dot active"></button>
+                        <button class="gallery-dot"></button>
+                        <button class="gallery-dot"></button>
+                        <button class="gallery-dot"></button>
+                        <button class="gallery-dot"></button>
+                        <button class="gallery-dot"></button>
+
+                    </div>
+
+                    <button class="gallery-arrow" id="nextGallery" aria-label="Next photo">
+                        →
+                    </button>
+
+                </div>
+
+                <button id="continueToNext">
+
+                    Next Anniversary
+
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             NEXT ANNIVERSARY
+             ========================= -->
+        <section id="next-anniversary" class="page">
+
+            <div class="anniversary-glow anniversary-glow--1"></div>
+            <div class="anniversary-glow anniversary-glow--2"></div>
+
+            <div class="anniversary-orbit"></div>
+            <div class="anniversary-orbit anniversary-orbit--2"></div>
+
+            <div class="anniversary-container">
+
+                <p class="anniversary-label">
+                    Next Anniversary
+                </p>
+
+                <h2 class="anniversary-title">
+                    Counting down to<br>
+                    <span>our next chapter.</span>
+                </h2>
+
+                <p class="anniversary-sub">
+                    Masih ada banyak hari yang menunggu<br>
+                    untuk kita isi dengan cerita baru.
+                </p>
+
+                <div class="anniversary-timer">
+
+                    <div class="timer-item">
+                        <span class="timer-number" id="annivDays">
+                            <span class="timer-number-span">00</span>
+                        </span>
+                        <span class="timer-label">Days</span>
+                    </div>
+
+                    <span class="timer-separator">:</span>
+
+                    <div class="timer-item">
+                        <span class="timer-number" id="annivHours">
+                            <span class="timer-number-span">00</span>
+                        </span>
+                        <span class="timer-label">Hours</span>
+                    </div>
+
+                    <span class="timer-separator">:</span>
+
+                    <div class="timer-item">
+                        <span class="timer-number" id="annivMins">
+                            <span class="timer-number-span">00</span>
+                        </span>
+                        <span class="timer-label">Minutes</span>
+                    </div>
+
+                    <span class="timer-separator">:</span>
+
+                    <div class="timer-item">
+                        <span class="timer-number" id="annivSecs">
+                            <span class="timer-number-span">00</span>
+                        </span>
+                        <span class="timer-label">Seconds</span>
+                    </div>
+
+                </div>
+
+                <p class="anniversary-date-info">
+                    until <strong>24 August 2027</strong>
+                </p>
+
+                <button id="continueToLast">
+
+                    One Last Thing...
+
+                    <span>→</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             ONE LAST THING...
+             ========================= -->
+        <section id="one-last-thing" class="page">
+
+            <div class="lasthing-ring"></div>
+            <div class="lasthing-ring lasthing-ring--2"></div>
+            <div class="lasthing-ring lasthing-ring--3"></div>
+
+            <div class="lasthing-dots"></div>
+
+            <div class="lasthing-container">
+
+                <p class="lasthing-label">
+                    One Last Thing...
+                </p>
+
+                <p class="lasthing-text">
+                    <span class="text-line">Before this story ends...</span>
+                    <span class="text-line line-break">
+                        there's one more thing
+                    </span>
+                    <span class="text-line line-break">
+                        I want <span class="highlight">you</span> to see.
+                    </span>
+                </p>
+
+                <div class="lasthing-divider"></div>
+
+                <p class="lasthing-hint">
+                    <span>Are you ready?</span>
+                </p>
+
+                <button id="continueToVideo">
+
+                    Watch Our Story
+
+                    <span class="btn-icon">▶</span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             FINAL VIDEO
+             ========================= -->
+        <section id="final-video" class="page">
+
+            <div class="video-glow"></div>
+
+            <div class="video-container">
+
+                <p class="video-label">
+                    Our Story
+                </p>
+
+                <h2 class="video-title">
+                    A love story<br>
+                    in <span>motion.</span>
+                </h2>
+
+                <div class="video-wrapper">
+
+                    <video
+                        id="storyVideo"
+                        class="story-video"
+                        controls
+                        playsinline
+                        preload="metadata">
+
+                        <source
+                            src="assets/videos/our-story.mp4"
+                            type="video/mp4">
+
+                        Your browser does not support the video tag.
+
+                    </video>
+
+                </div>
+
+                <p class="video-caption">
+                    Setiap frame menyimpan cerita kita. ♥
+                </p>
+
+                <div class="video-actions">
+
+                    <button id="replayVideo" class="video-btn video-btn--ghost">
+                        ↺ Replay
+                    </button>
+
+                    <button id="finishStory" class="video-btn">
+                        The End ❤️
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- =========================
+         SECRET ENDING
+         Overlay sinematik setelah "The End ❤️"
+         ========================= -->
+    <div id="secretEnding" aria-hidden="true">
+
+        <div class="se-layer se-black" id="seBlack"></div>
+
+        <!-- STAGE: Typewriter -->
+        <div class="se-stage" id="seStageTypewriter">
+            <p class="se-typewriter" id="seTypewriter"></p>
+        </div>
+
+        <!-- STAGE: Question -->
+        <div class="se-stage" id="seStageQuestion">
+            <div class="se-question-inner">
+                <h2 class="se-question-title">
+                    Would you like one more surprise?
+                </h2>
+                <div class="se-question-actions">
+                    <button class="se-btn se-btn--yes" id="seBtnYes">Yes ❤️</button>
+                    <button class="se-btn se-btn--no" id="seBtnNo" disabled>No</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- STAGE: Flower bloom + Bouquet + Message -->
+        <div class="se-stage" id="seStageFlower">
+
+            <div class="se-flower-scene" id="seFlowerScene">
+                <div class="se-plant" id="sePlant">
+                    <div class="se-seed" id="seSeed"></div>
+                    <div class="se-stem" id="seStem"></div>
+                    <div class="se-flower-head" id="seFlowerHead"></div>
+                    <div class="se-leaves" id="seLeaves"></div>
+                </div>
+                <div class="se-plant-glow" id="seGlow"></div>
+                <div class="se-particles" id="seParticles"></div>
+                <div class="se-fireflies" id="seFireflies"></div>
+                <div class="se-sparkles" id="seSparkles"></div>
+            </div>
+
+            <div class="se-bouquet-wrap" id="seBouquetWrap">
+                <div class="se-bouquet" id="seBouquet"></div>
+                <div class="se-bouquet-glow" id="seBouquetGlow"></div>
+            </div>
+
+            <div class="se-message" id="seMessage">
+                <p class="se-message-text">
+                    These flowers may be virtual...<br>
+                    but my love for you is real.
+                </p>
+                <span class="se-message-heart">❤️</span>
+            </div>
+
+            <button class="se-btn se-btn--take" id="seBtnTake">Take My Flowers 🌹</button>
+
+        </div>
+
+        <!-- STAGE: Flower storm -->
+        <div class="se-stage" id="seStageStorm">
+            <div class="se-storm" id="seStorm"></div>
+            <div class="se-storm-petals" id="seStormPetals"></div>
+            <div class="se-storm-sparkles" id="seStormSparkles"></div>
+            <div class="se-storm-glow" id="seStormGlow"></div>
+        </div>
+
+        <!-- STAGE: Night sky + Final message -->
+        <div class="se-stage" id="seStageNight">
+            <div class="se-night-sky" id="seNightSky"></div>
+            <div class="se-moon" id="seMoon"></div>
+            <div class="se-stars" id="seStars"></div>
+            <div class="se-fireflies-2" id="seFireflies2"></div>
+
+            <div class="se-final-wrap" id="seFinalWrap">
+                <p class="se-final-line se-final-line--1">No matter where life takes us...</p>
+                <p class="se-final-line se-final-line--2">I'll always choose you.</p>
+                <p class="se-final-line se-final-line--3">Again.</p>
+                <p class="se-final-line se-final-line--4">And again.</p>
+                <p class="se-final-line se-final-line--5">Happy Anniversary ❤️</p>
+                <p class="se-made-with">
+                    Made with all my love,<br>
+                    just for you.
+                </p>
+
+                <button class="se-btn se-btn--restart" id="seBtnRestart">
+                    ↺ Kembali ke Awal
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+
+<script src="js/music.js"></script>
+<script src="js/lock.js"></script>
+
+<script src="js/pageManager.js"></script>
+
+<script src="js/particles.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/story.js"></script>
+<script src="js/chapter.js"></script>
+<script src="js/counter.js"></script>
+<script src="js/things.js"></script>
+<script src="js/journey.js"></script>
+<script src="js/letter.js"></script>
+<script src="js/dream.js"></script>
+<script src="js/future.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/anniversary.js"></script>
+<script src="js/lastthing.js"></script>
+<script src="js/video.js"></script>
+<script src="js/secretEnding.js"></script>
+
+</body>
+</html>

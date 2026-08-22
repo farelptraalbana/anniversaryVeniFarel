@@ -1,0 +1,292 @@
+/* =========================
+   LITTLE THINGS
+========================= */
+
+#little-things {
+    position: relative;
+
+    padding: 80px 40px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(236, 72, 153, 0.08),
+            transparent 35%
+        ),
+        #020617;
+
+}
+
+
+#little-things.page.active{
+    display:flex;
+}
+
+
+.things-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1200px;
+
+    text-align: center;
+}
+
+
+/* HEADING */
+
+.things-heading {
+    margin-bottom: 80px;
+}
+
+
+.things-label {
+    color: #ec4899;
+
+    font-size: 12px;
+
+    letter-spacing: 8px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 25px;
+}
+
+
+.things-heading h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: 1.05;
+}
+
+
+.things-heading h2 span {
+    color: #ec4899;
+}
+
+
+.things-description {
+    max-width: 550px;
+
+    margin: 30px auto 0;
+
+    color: #94a3b8;
+
+    line-height: 2;
+}
+
+
+/* =========================
+   CARD GRID
+========================= */
+
+.things-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.love-card {
+    height: 380px;
+
+    perspective: 1000px;
+
+    cursor: pointer;
+}
+
+
+.love-card-inner {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.8s;
+
+    transform-style: preserve-3d;
+}
+
+
+.love-card.card-open .love-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+.love-card-front,
+.love-card-back {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 25px;
+
+    backface-visibility: hidden;
+
+    -webkit-backface-visibility: hidden;
+}
+
+
+/* FRONT */
+
+.love-card-front {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.07),
+            rgba(255, 255, 255, 0.02)
+        );
+}
+
+
+.love-card-front span {
+    font-family: "Playfair Display", serif;
+
+    font-size: 100px;
+
+    color: rgba(255, 255, 255, 0.15);
+}
+
+
+.love-card-front p {
+    margin-top: 30px;
+
+    color: #64748b;
+
+    font-size: 10px;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+}
+
+
+/* BACK */
+
+.love-card-back {
+    transform: rotateY(180deg);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(236, 72, 153, 0.18),
+            rgba(30, 41, 59, 0.9)
+        );
+}
+
+
+.love-card-back > span {
+    color: #ec4899;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+}
+
+
+.love-card-back h3 {
+    margin: 25px 0;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 35px;
+}
+
+
+.love-card-back p {
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+    line-height: 2;
+}
+
+
+.card-heart {
+    margin-top: 25px;
+
+    color: #ec4899;
+
+    font-size: 20px;
+}
+
+
+/* FOOTER */
+
+.things-hint {
+    margin-top: 50px;
+
+    color: #64748b;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+
+.things-hint span {
+    color: #ec4899;
+}
+
+
+#continueThings {
+    margin-top: 40px;
+
+    padding: 16px 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: white;
+
+    border-radius: 100px;
+}
+
+
+#continueThings span {
+    display: inline-block;
+
+    margin-left: 10px;
+
+    transition: transform 0.3s;
+}
+
+
+#continueThings:hover span {
+    transform: translateX(7px);
+}
+
+
+.things-glow {
+    position: absolute;
+
+    width: 700px;
+    height: 700px;
+
+    left: -350px;
+
+    border-radius: 50%;
+
+    background: rgba(236, 72, 153, 0.08);
+
+    filter: blur(130px);
+}

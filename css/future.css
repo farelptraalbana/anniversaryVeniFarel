@@ -1,0 +1,120 @@
+#our-future{
+
+    position:relative;
+
+    padding:80px 20px;
+
+    background:
+        radial-gradient(circle at 50% 30%,
+        rgba(236,72,153,.12),
+        transparent 45%),
+        #020617;
+
+}
+
+.future-container{
+
+    width:min(900px,90%);
+
+    text-align:center;
+
+    z-index:2;
+
+}
+
+.future-label{
+
+    color:#ec4899;
+
+    letter-spacing:8px;
+
+    text-transform:uppercase;
+
+    margin-bottom:30px;
+
+    font-size:13px;
+
+}
+
+.future-title{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(48px,7vw,82px);
+
+    line-height:1.15;
+
+}
+
+.future-description{
+
+    margin:40px auto;
+
+    max-width:650px;
+
+    color:#cbd5e1;
+
+    font-size:18px;
+
+    line-height:2;
+
+}
+
+.future-glow{
+
+    position:absolute;
+
+    width:700px;
+
+    height:700px;
+
+    border-radius:50%;
+
+    background:rgba(236,72,153,.10);
+
+    filter:blur(140px);
+
+}
+
+.future-moon{
+
+    display:flex;
+
+    justify-content:center;
+
+    margin:50px 0;
+
+}
+
+.moon{
+
+    width:180px;
+
+    height:180px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+        0 0 50px rgba(255,255,255,.5);
+
+}
+
+#continueFuture{
+
+    padding:18px 42px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#ec4899;
+
+    color:white;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+}

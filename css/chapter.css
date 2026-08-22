@@ -1,0 +1,283 @@
+/* =========================
+   FIRST CHAPTER
+========================= */
+
+#first-chapter {
+    position: relative;
+    padding: 120px 40px 80px;
+
+    background:
+        radial-gradient(
+            circle at 20% 50%,
+            rgba(236,72,153,.08),
+            transparent 40%
+        ),
+        #020617;
+}
+
+#first-chapter.page.active{
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.chapter-container {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 1200px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.chapter-heading {
+    text-align: center;
+
+    margin-bottom: 100px;
+}
+
+
+.chapter-number {
+    color: #ec4899;
+
+    font-size: 13px;
+
+    letter-spacing: 8px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+}
+
+
+.chapter-heading h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(50px, 7vw, 90px);
+
+    line-height: 1.1;
+}
+
+
+.chapter-subtitle {
+    margin-top: 20px;
+
+    color: #94a3b8;
+
+    font-size: 17px;
+
+    font-weight: 300;
+}
+
+
+/* =========================
+   MEMORY LAYOUT
+========================= */
+
+.chapter-memory {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.memory-photo-wrapper {
+    position: relative;
+
+    padding: 15px 15px 30px;
+
+    background: #f8fafc;
+
+    transform: rotate(-4deg);
+
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+
+.memory-photo {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+}
+
+
+.photo-date {
+    position: absolute;
+
+    top: -40px;
+    right: -25px;
+
+    z-index: 3;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 80px;
+
+    color: rgba(249, 168, 212, 0.15);
+}
+
+
+.photo-caption {
+    color: #475569;
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 13px;
+
+    font-style: italic;
+}
+
+
+/* =========================
+   STORY
+========================= */
+
+.memory-story {
+    max-width: 520px;
+}
+
+
+.story-small {
+    color: #ec4899;
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+}
+
+
+.memory-story h3 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(38px, 4vw, 58px);
+
+    line-height: 1.25;
+
+    margin-bottom: 35px;
+}
+
+
+.memory-text {
+    color: #cbd5e1;
+
+    font-size: 16px;
+
+    line-height: 2;
+
+    margin-bottom: 20px;
+}
+
+
+.memory-quote {
+    position: relative;
+
+    margin-top: 45px;
+
+    padding-left: 30px;
+
+    color: #f9a8d4;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 25px;
+
+    line-height: 1.6;
+}
+
+
+.memory-quote::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 5px;
+
+    width: 2px;
+    height: 100%;
+
+    background: #ec4899;
+}
+
+
+/* =========================
+   GLOW
+========================= */
+
+.chapter-glow {
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    right: -300px;
+    top: 20%;
+
+    border-radius: 50%;
+
+    background: rgba(236, 72, 153, 0.08);
+
+    filter: blur(120px);
+}
+
+#openCounter {
+    margin-top: 50px;
+
+    padding: 16px 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius: 100px;
+
+    background: rgba(255, 255, 255, 0.05);
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    cursor: pointer;
+}
+
+
+#openCounter span {
+    display: inline-block;
+
+    margin-left: 10px;
+
+    transition: transform 0.3s;
+}
+
+
+#openCounter:hover span {
+    transform: translateX(7px);
+}

@@ -1,0 +1,287 @@
+/* =========================
+   ONE LAST THING...
+   Halaman misterius sebelum video final
+   ========================= */
+
+#one-last-thing {
+    position: relative;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(236, 72, 153, .06), transparent 50%),
+        #020617;
+    padding: 60px 20px;
+}
+
+
+/* =========================
+   ANTISIPASI KONTEN TERPOTONG
+   Margin auto dari page.css memusatkan konten secara
+   vertikal. Jika konten lebih tinggi dari layar, bagian
+   atas bisa terpotong. Atur margin ke 0 agar aman.
+   ========================= */
+
+#one-last-thing .lasthing-container {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   CONTAINER
+   ========================= */
+
+.lasthing-container {
+    width: min(900px, 92%);
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+
+/* =========================
+   LABEL
+   ========================= */
+
+.lasthing-label {
+    color: #ec4899;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 40px;
+    font-weight: 300;
+    opacity: 0.6;
+}
+
+
+/* =========================
+   MAIN TEXT
+   ========================= */
+
+.lasthing-text {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(32px, 5vw, 64px);
+    line-height: 1.4;
+    color: #f1f5f9;
+    max-width: 750px;
+    margin: 0 auto 50px;
+    position: relative;
+}
+
+.lasthing-text .highlight {
+    color: #ec4899;
+    font-style: italic;
+}
+
+.lasthing-text .line-break {
+    display: block;
+    margin-top: 12px;
+}
+
+
+/* =========================
+   DIVIDER LINE
+   ========================= */
+
+.lasthing-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #ec4899, transparent);
+    margin: 0 auto 50px;
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+
+/* =========================
+   HINT TEXT
+   ========================= */
+
+.lasthing-hint {
+    color: #64748b;
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: 300;
+    margin-bottom: 50px;
+    opacity: 0;
+}
+
+.lasthing-hint span {
+    display: inline-block;
+    animation: lasthingPulse 2s ease-in-out infinite;
+}
+
+@keyframes lasthingPulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+
+/* =========================
+   BUTTON
+   ========================= */
+
+#continueToVideo {
+    padding: 18px 50px;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #ec4899, #db2777);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .4s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    letter-spacing: .5px;
+    box-shadow: 0 10px 40px rgba(236, 72, 153, .25);
+    position: relative;
+    overflow: hidden;
+}
+
+#continueToVideo::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 30%, rgba(255,255,255,.15) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform .6s ease;
+}
+
+#continueToVideo:hover::before {
+    transform: translateX(100%);
+}
+
+#continueToVideo:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(236, 72, 153, .4);
+}
+
+#continueToVideo:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+#continueToVideo .btn-icon {
+    font-size: 20px;
+    transition: transform .35s ease;
+    display: inline-block;
+}
+
+#continueToVideo:hover .btn-icon {
+    transform: translateX(6px) scale(1.1);
+}
+
+
+/* =========================
+   DECORATIVE — FLOATING DOTS
+   ========================= */
+
+.lasthing-dots {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.lasthing-dot {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(255, 255, 255, .15);
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(255, 255, 255, .08);
+}
+
+
+/* =========================
+   DECORATIVE — GLOW RING
+   ========================= */
+
+.lasthing-ring {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 1px solid rgba(236, 72, 153, .06);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.lasthing-ring--2 {
+    width: 550px;
+    height: 550px;
+    border-color: rgba(236, 72, 153, .04);
+}
+
+.lasthing-ring--3 {
+    width: 700px;
+    height: 700px;
+    border-color: rgba(255, 255, 255, .03);
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    #one-last-thing {
+        padding: 80px 16px;
+    }
+
+    .lasthing-label {
+        margin-bottom: 30px;
+    }
+
+    .lasthing-text {
+        font-size: clamp(26px, 6vw, 38px);
+    }
+
+    .lasthing-divider {
+        margin: 35px auto;
+    }
+
+    .lasthing-hint {
+        font-size: 11px;
+        margin-bottom: 40px;
+    }
+
+    #continueToVideo {
+        padding: 16px 40px;
+        font-size: 14px;
+    }
+
+    .lasthing-ring {
+        width: 250px;
+        height: 250px;
+    }
+
+    .lasthing-ring--2 {
+        width: 360px;
+        height: 360px;
+    }
+
+    .lasthing-ring--3 {
+        width: 480px;
+        height: 480px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .lasthing-text {
+        font-size: 22px;
+    }
+
+    #continueToVideo {
+        padding: 14px 34px;
+        font-size: 13px;
+    }
+
+}

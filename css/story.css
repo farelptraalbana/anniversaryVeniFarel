@@ -1,0 +1,210 @@
+#story-intro {
+    position: relative;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #171126 0%,
+            #080b16 50%,
+            #020617 100%
+        );
+}
+
+
+#story-intro.page.active{
+    display:flex;
+}
+
+body.story-locked {
+    overflow: hidden;
+}
+
+/* CONTENT */
+
+.story-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+    height:100%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px;
+
+    text-align: center;
+}
+
+
+/* LABEL */
+
+.story-label {
+    position: absolute;
+
+    top: 70px;
+
+    color: #ec4899;
+
+    font-size: 13px;
+
+    letter-spacing: 8px;
+
+    text-transform: uppercase;
+}
+
+
+/* SLIDES */
+
+.story-slides {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 1100px;
+
+    height: 250px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.story-slide {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+}
+
+
+.story-slide.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+
+.story-slide p {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(42px, 6vw, 80px);
+
+    line-height: 1.3;
+
+    color: white;
+}
+
+
+.story-slide.story-highlight p {
+    color: #f9a8d4;
+}
+
+
+/* BUTTON */
+
+.story-navigation {
+    margin-top: 40px;
+}
+
+
+#storyNext {
+    padding: 16px 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 100px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    color: white;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    backdrop-filter: blur(10px);
+}
+
+
+#storyNext span {
+    display: inline-block;
+
+    margin-left: 10px;
+
+    transition: transform 0.3s;
+}
+
+
+#storyNext:hover span {
+    transform: translateX(6px);
+}
+
+
+/* PROGRESS */
+
+.story-progress {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+
+.story-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.2);
+
+    transition: 0.4s;
+}
+
+
+.story-dot.active {
+    width: 30px;
+
+    border-radius: 10px;
+
+    background: #ec4899;
+}
+
+
+/* GLOW */
+
+.story-background-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 600px;
+    height: 600px;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgba(236, 72, 153, 0.12);
+
+    filter: blur(120px);
+}

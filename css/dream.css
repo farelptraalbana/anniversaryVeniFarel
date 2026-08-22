@@ -1,0 +1,137 @@
+#dream-together{
+
+    position:relative;
+
+    padding:80px 30px;
+
+    background:
+    radial-gradient(circle at top,
+    rgba(236,72,153,.08),
+    transparent 45%),
+    #020617;
+
+}
+
+.dream-container{
+
+    width:min(1200px,92%);
+
+    text-align:center;
+
+    /* Antisipasi konten terpotong (pola sama seperti gallery/anniversary) */
+    margin-top:0;
+
+    margin-bottom:0;
+
+}
+
+.dream-label{
+
+    color:#ec4899;
+
+    letter-spacing:8px;
+
+    text-transform:uppercase;
+
+    margin-bottom:25px;
+
+}
+
+.dream-container h2{
+
+    font-family:"Playfair Display",serif;
+
+    font-size:clamp(48px,6vw,82px);
+
+    line-height:1.2;
+
+}
+
+.dream-description{
+
+    margin:40px auto;
+
+    max-width:700px;
+
+    color:#cbd5e1;
+
+    line-height:2;
+
+}
+
+.dream-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:35px;
+
+    margin-top:70px;
+
+}
+
+.dream-card{
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+
+    transition:.4s;
+
+}
+
+.dream-card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.dream-icon{
+
+    font-size:55px;
+
+    margin-bottom:25px;
+
+}
+
+.dream-card h3{
+
+    margin-bottom:20px;
+
+    font-family:"Playfair Display",serif;
+
+}
+
+.dream-card p{
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+}
+
+#continueGallery{
+
+    margin-top:70px;
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#ec4899;
+
+    color:white;
+
+    cursor:pointer;
+
+}

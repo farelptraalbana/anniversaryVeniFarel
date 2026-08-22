@@ -1,0 +1,57 @@
+#app{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+.page{
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100vh;
+
+    display:none;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:flex-start;
+
+    overflow-y:auto;
+
+    -webkit-overflow-scrolling:touch;
+
+    padding:30px 0;
+
+}
+
+
+.page > .counter-container,
+.page > .gallery-container,
+.page > .anniversary-container,
+.page > .lasthing-container,
+.page > .future-container,
+.page > .story-content{
+    margin-top:auto;
+    margin-bottom:auto;
+    flex-shrink:0;
+}
+
+.page.active{
+
+    display:flex;
+
+}
