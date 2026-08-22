@@ -69,4 +69,36 @@
     document.addEventListener('keydown', startOnFirstInteraction);
     document.addEventListener('touchstart', startOnFirstInteraction);
 
+    // =========================
+    // API GLOBAL
+    // Dipakai halaman lain (mis. final-video) untuk
+    // mematikan/menyalakan musik secara manual.
+    // =========================
+    function playMusic() {
+        const playPromise = bgMusic.play();
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {});
+        }
+    }
+
+    function pauseMusic() {
+        bgMusic.pause();
+    }
+
+    function toggleMusic() {
+        if (bgMusic.paused) {
+            playMusic();
+            return true; // sedang bermain
+        }
+        pauseMusic();
+        return false; // sedang dimatikan
+    }
+
+    window.BgMusic = {
+        play: playMusic,
+        pause: pauseMusic,
+        toggle: toggleMusic,
+        isPlaying: () => !bgMusic.paused
+    };
+
 })();

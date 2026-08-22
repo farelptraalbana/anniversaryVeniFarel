@@ -44,18 +44,34 @@ if (finishStoryBtn) {
 
         finishStoryBtn.disabled = true;
 
-        // Hentikan video
+        // =========================
+        // HIDUPKAN KEMBALI MUSIC
+        // =========================
+
+        if (window.BgMusic) {
+            window.BgMusic.play();
+        }
+
+        // =========================
+        // HENTIKAN VIDEO
+        // =========================
+
         if (storyVideo) {
             storyVideo.pause();
         }
 
-        // Animasi keluar
+        // =========================
+        // ANIMASI KELUAR
+        // =========================
+
         gsap.to('#final-video .video-container', {
+
             opacity: 0,
             y: -30,
             scale: 0.97,
             duration: 0.8,
             ease: 'power3.in',
+
             onComplete: () => {
 
                 // Reset untuk kunjungan berikutnya
@@ -65,26 +81,24 @@ if (finishStoryBtn) {
                     scale: 1
                 });
 
-                // Buka SECRET ENDING (urutan sinematik) jika tersedia
-                if (window.SecretEnding && typeof window.SecretEnding.open === 'function') {
+                // Buka SECRET ENDING
+                if (
+                    window.SecretEnding &&
+                    typeof window.SecretEnding.open === 'function'
+                ) {
 
-                    // Jangan aktifkan kembali tombol di sini —
-                    // SecretEnding akan mengaktifkannya lagi saat ditutup.
                     window.SecretEnding.open();
 
                 } else {
 
                     // Fallback: kembali ke halaman awal
                     showPage('hero');
+
                     finishStoryBtn.disabled = false;
-
                 }
-
             }
         });
-
     });
-
 }
 
 
