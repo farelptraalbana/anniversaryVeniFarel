@@ -76,12 +76,17 @@ if (finishStoryBtn) {
 
                 // Reset untuk kunjungan berikutnya
                 gsap.set('#final-video .video-container', {
+
                     opacity: 1,
                     y: 0,
                     scale: 1
+
                 });
 
-                // Buka SECRET ENDING
+                // =========================
+                // SECRET ENDING
+                // =========================
+
                 if (
                     window.SecretEnding &&
                     typeof window.SecretEnding.open === 'function'
@@ -91,14 +96,19 @@ if (finishStoryBtn) {
 
                 } else {
 
-                    // Fallback: kembali ke halaman awal
+                    // Fallback
                     showPage('hero');
 
                     finishStoryBtn.disabled = false;
+
                 }
+
             }
+
         });
+
     });
+
 }
 
 

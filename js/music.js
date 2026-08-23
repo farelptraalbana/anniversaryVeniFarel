@@ -1,7 +1,5 @@
 // =========================
 // BACKGROUND MUSIC
-// Autoplay saat web dibuka, lalu diulang otomatis dari awal
-// setelah lagu selesai (looping playback).
 // =========================
 
 (function () {
@@ -10,95 +8,178 @@
 
     if (!bgMusic) return;
 
-    // Pastikan looping playback: begitu lagu habis, putar ulang dari awal.
-    // (atribut "loop" di HTML sudah menangani ini, tapi kita tambahkan
-    // fallback manual agar tetap aman di browser yang kurang konsisten)
+    // =========================
+    // CONFIG
+    // =========================
+
     bgMusic.loop = true;
-
-    bgMusic.addEventListener('ended', () => {
-        bgMusic.currentTime = 0;
-        bgMusic.play().catch(() => {});
-    });
+    bgMusic.preload = 'auto';
 
     // =========================
-    // AUTOPLAY
+    // PLAY MUSIC
     // =========================
-    function tryPlayMusic() {
-        const playPromise = bgMusic.play();
 
-        if (playPromise !== undefined) {
-            playPromise.catch(() => {
-                // Autoplay diblokir browser (butuh interaksi user dulu).
-                // Musik akan otomatis diputar begitu user berinteraksi
-                // pertama kali dengan halaman (lihat listener di bawah).
-            });
-        }
-    }
-
-    // Coba putar otomatis begitu halaman siap
-    document.addEventListener('DOMContentLoaded', tryPlayMusic);
-
-    // Jika DOMContentLoaded sudah lewat (script dimuat belakangan),
-    // langsung coba mainkan
-    if (document.readyState === 'complete' || document.readyState === 'interactive') {
-        tryPlayMusic();
-    }
-
-    // =========================
-    // FALLBACK: MULAI SAAT INTERAKSI PERTAMA
-    // (mengatasi kebijakan autoplay browser yang memblokir suara
-    // sebelum ada interaksi dari user)
-    // =========================
-    function startOnFirstInteraction() {
-        if (!bgMusic.paused) {
-            removeInteractionListeners();
-            return;
-        }
-
-        bgMusic.play().catch(() => {});
-        removeInteractionListeners();
-    }
-
-    function removeInteractionListeners() {
-        document.removeEventListener('click', startOnFirstInteraction);
-        document.removeEventListener('keydown', startOnFirstInteraction);
-        document.removeEventListener('touchstart', startOnFirstInteraction);
-    }
-
-    document.addEventListener('click', startOnFirstInteraction);
-    document.addEventListener('keydown', startOnFirstInteraction);
-    document.addEventListener('touchstart', startOnFirstInteraction);
-
-    // =========================
-    // API GLOBAL
-    // Dipakai halaman lain (mis. final-video) untuk
-    // mematikan/menyalakan musik secara manual.
-    // =========================
     function playMusic() {
+
         const playPromise = bgMusic.play();
+
         if (playPromise !== undefined) {
-            playPromise.catch(() => {});
+
+            playPromise.catch(() => {
+                // Browser memblokir autoplay.
+                // Akan dicoba lagi saat user berinteraksi.
+            });
+
         }
     }
+
+    // =========================
+    // PAUSE MUSIC
+    // =========================
 
     function pauseMusic() {
         bgMusic.pause();
     }
 
+    // =========================
+    // TOGGLE MUSIC
+    // =========================
+
     function toggleMusic() {
+
         if (bgMusic.paused) {
+
             playMusic();
-            return true; // sedang bermain
+
+            return true;
+
+        } else {
+
+            pauseMusic();
+
+            return false;
+
         }
-        pauseMusic();
-        return false; // sedang dimatikan
     }
 
+    // =========================
+    // AUTOPLAY
+    // =========================
+
+    function tryAutoplay() {
+
+        if (bgMusic.paused) {
+            playMusic();
+        }
+
+    }
+
+    // Coba saat DOM siap
+    if (document.readyState === 'loading') {
+
+        document.addEventListener(
+            'DOMContentLoaded',
+            tryAutoplay,
+            { once: true }
+        );
+
+    } else {
+
+        tryAutoplay();
+
+    }
+
+    // =========================
+    // FALLBACK MOBILE
+    // =========================
+    // Jika autoplay diblokir HP,
+    // musik mulai saat user pertama kali
+    // menyentuh layar / klik.
+
+    function startMusicFromInteraction() {
+
+        if (!bgMusic.paused) {
+
+            removeInteractionListeners();
+
+            return;
+
+        }
+
+        const playPromise = bgMusic.play();
+
+        if (playPromise !== undefined) {
+
+            playPromise
+                .then(() => {
+
+                    removeInteractionListeners();
+
+                })
+                .catch(() => {
+
+                    // Jangan hapus listener.
+                    // Coba lagi pada interaksi berikutnya.
+
+                });
+
+        } else {
+
+            removeInteractionListeners();
+
+        }
+
+    }
+
+    function removeInteractionListeners() {
+
+        document.removeEventListener(
+            'click',
+            startMusicFromInteraction
+        );
+
+        document.removeEventListener(
+            'touchstart',
+            startMusicFromInteraction
+        );
+
+        document.removeEventListener(
+            'pointerdown',
+            startMusicFromInteraction
+        );
+
+    }
+
+    document.addEventListener(
+        'click',
+        startMusicFromInteraction
+    );
+
+    document.addEventListener(
+        'touchstart',
+        startMusicFromInteraction,
+        { passive: true }
+    );
+
+    document.addEventListener(
+        'pointerdown',
+        startMusicFromInteraction
+    );
+
+    // =========================
+    // GLOBAL API
+    // =========================
+
     window.BgMusic = {
+
         play: playMusic,
+
         pause: pauseMusic,
+
         toggle: toggleMusic,
+
         isPlaying: () => !bgMusic.paused
+
     };
 
 })();
